@@ -1,5 +1,7 @@
 class ContentsController < ApplicationController
   before_action :set_content, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, except: [:show, :index]
+   before_action :control_user, only: [:edit, :update, :destroy]
 
   # GET /contents
   # GET /contents.json
@@ -61,9 +63,15 @@ class ContentsController < ApplicationController
     def set_content
       @content = Content.find(params[:id])
     end
+    def control_user
+      if current_user != @content.user 
+        redirect_to root_url, alert:"Lei non ha accesso a questo articolo, perchè non la creato lei!"
+      end 
+    end 
+
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def content_params
-      params.require(:content).permit(:titolo, :descrizione, :prezzo)
+      params.require(:content).permit(:titolo, :descrizione, :prezzo, :cover, :allegato)
     end
-end
+  end
