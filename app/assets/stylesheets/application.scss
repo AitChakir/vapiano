@@ -6,10 +6,36 @@ min-height: 100vh;
 flex-direction: column;
 }
 
+h1 {
+	font-size: 3em;
+}
 main {
 flex: 1 0 auto;
 }
 
 .btn-devise {
 	width: 100%;
+}
+
+.btn-form {
+	width: 100%;
+}
+
+.gradino-titolo {
+	margin-top: 0;
+	font-size: 3.4em;
+}
+.show-img{
+	padding-right: 5%;
+}
+
+.show-prezzo{
+	font-size: 1.5em;
+}
+.margine{
+	margin-top: 2%;
+}
+
+.card-image {
+	height: 150px;
 }

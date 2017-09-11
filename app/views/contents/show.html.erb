@@ -1,16 +1,19 @@
-<%= image_tag @content.cover.url(:medium) %>
+<div class="row">
+	<div class="col l6">
+			<%= image_tag @content.cover.url, class: "responsive-img show-img" %>
+	</div>
+	<div class="col l6">
+		<h1 class="gradino-titolo"><%= @content.titolo %></h1>
 
-<p>
-  <%= @content.titolo %>
-</p>
+		<p class= "show-prezzo">Prezzo prodotto: <%= number_to_currency(@content.prezzo) %></p>
 
-<p>
-  <%= @content.descrizione %>
-</p>
+		<p>Venduto da: <%= @content.user.name %></p>
 
-<p>
-  <%= @content.prezzo %>
-</p>
+		<p><%= @content.descrizione %></p>
+	</div>
+
+</div>
+
 <% if current_user == @content.user %> 
 <%= link_to 'Modifica ', edit_content_path(@content) %> 
 <% end %>

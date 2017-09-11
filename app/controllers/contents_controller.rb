@@ -1,12 +1,12 @@
 class ContentsController < ApplicationController
   before_action :set_content, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, except: [:show, :index]
-   before_action :control_user, only: [:edit, :update, :destroy]
+  before_action :control_user, only: [:edit, :update, :destroy]
 
   # GET /contents
   # GET /contents.json
   def index
-    @contents = Content.all
+    @contents = Content.all.order("created_at DESC").paginate(:page => params[:page], :per_page => 12)
   end
 
   # GET /contents/1

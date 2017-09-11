@@ -12,13 +12,18 @@
   <% end %>
 
   <div class="field">
+    <label class="grey-text">Aggiungi qui il tuo allegato:</label><br>
+    <%= f.file_field :allegato %>
+  </div><br>
+
+  <div class="field">
     <%= f.label :titolo %>
     <%= f.text_field :titolo %>
   </div>
 
   <div class="field">
     <%= f.label :descrizione %>
-    <%= f.text_area :descrizione %>
+    <%= f.text_area :descrizione, class: "materialize-textarea" %>
   </div>
 
   <div class="field">
@@ -26,17 +31,12 @@
     <%= f.text_field :prezzo %>
   </div>
 
-
   <div class="field">
-    <%= f.label :allegato %>
-    <%= f.file_field :allegato %>
-  </div>
-  <div class="field">
-    <%= f.label :cover %>
+    <label class="grey-text">Aggiungi qui la foto di copertina:</label><br>
     <%= f.file_field :cover %>
-  </div>
+  </div><br>
 
   <div class="actions">
-    <%= f.submit %>
-  </div>
+    <%= f.submit 'Salva contenuto', class: "btn btn-form" %>
+  </div><br>
 <% end %>
