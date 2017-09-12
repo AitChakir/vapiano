@@ -55,13 +55,14 @@ class ContentsController < ApplicationController
     @content.destroy
     respond_to do |format|
       format.html { redirect_to contents_url, notice: 'Content was successfully destroyed.' }
+      format.json { head :no_content }
     end
   end
 
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_content
-      @content = Content.find(params[:id])
+      @content = Content.friendly.find(params[:id])    
     end
     def control_user
       if current_user != @content.user 

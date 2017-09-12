@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  email_acquirente: MyString
+  string: MyString
+  email_venditore: MyString
+  string: MyString
+  guid: MyString
+  string: MyString
+  content_id: MyString
+  integer: MyString
+
+two:
+  email_acquirente: MyString
+  string: MyString
+  email_venditore: MyString
+  string: MyString
+  guid: MyString
+  string: MyString
+  content_id: MyString
+  integer: MyString
